@@ -25,7 +25,7 @@ class LinkedQueue(object):
 
     def length(self):
         """Return the number of items in this queue."""
-        return self.list.length()
+        return self.list.size
 
     def enqueue(self, item):
         """Insert the given item at the back of this queue.
@@ -47,7 +47,7 @@ class LinkedQueue(object):
             node = self.list.head
             data = self.list.head.data
             self.list.head = node.next
-            
+            self.list.size -= 1
             return data
         raise ValueError("Empty Queue")
 
