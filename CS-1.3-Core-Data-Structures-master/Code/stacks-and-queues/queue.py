@@ -43,14 +43,13 @@ class LinkedQueue(object):
         """Remove and return the item at the front of this queue,
         or raise ValueError if this queue is empty.
         Running time: O(1) – Why? [Removing in  a linked list is always O(1) because it is just changing pointers]"""
-        if self.is_empty():
-            raise ValueError("Empty Queue")
-        else:
+        if self.is_empty() is False:
             node = self.list.head
             data = self.list.head.data
             self.list.head = node.next
             
             return data
+        raise ValueError("Empty Queue")
 
 
 # Implement ArrayQueue below, then change the assignment at the bottom
